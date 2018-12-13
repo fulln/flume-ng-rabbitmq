@@ -1,7 +1,11 @@
+	2018-12-13 11:39:43 update： 提示 当前的版本flume最好选择的是1.5.0  添加queue和exchange的动态绑定和routingkey的方式
+
 Flume-ng RabbitMQ
 ========
 
 This project provides both a RabbitMQ source and sink for Flume-NG.  To use this plugin with your Flume installation, build from source using
+
+
 
 <pre>mvn package</pre>
 
@@ -57,10 +61,11 @@ RabbitMQ Sink
 
 	agent1.sinks.rabbitmq-sink1.channels = ch1  
 	agent1.sinks.rabbitmq-sink1.type = org.apache.flume.sink.rabbitmq.RabbitMQSink  
-	agent1.sources.rabbitmq-source1.hostname = 10.10.10.173  
-	agent1.sources.rabbitmq-source1.queuename = log_jammin
-	agent1.sources.rabbitmq-source1.username = rabbitmquser
-	agent1.sources.rabbitmq-source1.password = p@$$w0rd!
-	agent1.sources.rabbitmq-source1.port = 12345
-	agent1.sources.rabbitmq-source1.virtualhost = virtualhost1
-	agent1.sources.rabbitmq-source1.exchange = exchange1
+	agent1.sinks.rabbitmq-source1.hostname = 10.10.10.173  
+	agent1.sinks.rabbitmq-source1.queuename = log_jammin
+	agent1.sinks.rabbitmq-source1.username = rabbitmquser
+	agent1.sinks.rabbitmq-source1.password = p@$$w0rd!
+	agent1.sinks.rabbitmq-source1.port = 12345
+	agent1.sinks.rabbitmq-source1.virtualhost = virtualhost1
+	agent1.sinks.rabbitmq-source1.exchange = exchange1
+	agent1.sinks.rabbitmq-source1.routingKey = key2
